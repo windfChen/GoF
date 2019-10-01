@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.windf.study</groupId>
+    <artifactId>gof</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <description>经典设计模式理解</description>
+
+	<properties>
+		<project.build.version>1.8</project.build.version>
+		<project.build.encoding>utf-8</project.build.encoding>
+	</properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>design</finalName>
+
+        <plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<compilerVersion>${project.build.version}</compilerVersion>
+					<encoding>${project.build.encoding}</encoding>
+					<source>${project.build.version}</source>
+					<target>${project.build.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.7.2</version>
+				<configuration>
+					<forkMode>once</forkMode>
+					<argLine>-Dfile.encoding=UTF-8</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>${project.build.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>Whaty Release Repositories</id>
+            <url>http://maven.webtrn.cn/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>Whaty Snapshot Repositories</id>
+            <url>http://maven.webtrn.cn/repository/maven-snapshots/</url>
+        </repository>
+    </repositories>
+</project>
