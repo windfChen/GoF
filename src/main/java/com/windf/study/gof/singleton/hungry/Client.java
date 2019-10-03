@@ -37,12 +37,12 @@ public class Client {
          */
         SingleObject singleObjectNormal = SingleObject.getInstence();
         try {
-            FileOutputStream fos = new FileOutputStream("SingleObject");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(singleObjectNormal);
 
-            FileInputStream fis = new FileInputStream("SingleObject");
-            ObjectInputStream ois = new ObjectInputStream(fis);
+            ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bais);
             SingleObject singleObjectBySerial = (SingleObject) ois.readObject();
 
             System.out.println("序列化回来的对象和正常创建的是否为一个：" + (singleObjectNormal == singleObjectBySerial));
